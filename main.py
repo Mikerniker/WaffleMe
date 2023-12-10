@@ -3,6 +3,8 @@ import streamlit as st
 from PIL import Image
 import random
 from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.let_it_rain import rain
+
 # import base64
 # from functions import read_inventory, read_evacuation_centers
 # from functions import search_active_inventory, read_active_sites
@@ -28,9 +30,15 @@ banner_image = Image.open('images/waffle2.png')
 
 st.image(banner_image, width=900)
 
+rain(
+    emoji="🧇",
+    font_size=54,
+    falling_speed=5,
+    animation_length="infinite",
+)
 
 if st.button('Start Game'):
-    switch_page("hacker")
+    switch_page("game")
 # Links to other Pages
 
 # st.header('Waffle Score: 0')
