@@ -64,6 +64,11 @@ def countdown(time_sec, countdown_placeholder):
         # time.sleep(1)
 
 
+def hacker_image():
+    hacker_image_paths = ["images/hackerwaffle.png", "images/hackerwaffle2.png"]
+    display_img = random.choice(hacker_image_paths)
+    return display_img
+
 display = show_image()
 
 with col1:
