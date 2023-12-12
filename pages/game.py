@@ -55,22 +55,13 @@ def show_image():
     image_choice = display_img[0]
     return image_choice, image_path
 
-# def countdown(time_sec):
-#     if time_sec >= 0:
-#         mins, secs = divmod(time_sec, 60)
-#         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-#         print(f'\r{timeformat}', end='')  #pycharm
-#         time.sleep(1)
-#         time_sec -= 1
 
-
-def countdown(time_sec):
+def countdown(time_sec, countdown_placeholder):
     if time_sec >= 0:
         mins, secs = divmod(time_sec, 60)
         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        return timeformat
-
-
+        countdown_placeholder.write(f"#### Time remaining: {timeformat}")
+        # time.sleep(1)
 
 
 display = show_image()
