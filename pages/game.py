@@ -39,6 +39,9 @@ user_guess = ""
 player_choices = []
 
 
+def start_game_btn():
+    st.session_state.game_btn = True
+
 
 def check_score(guess, computer):
     if guess == computer:
