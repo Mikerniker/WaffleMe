@@ -33,19 +33,11 @@ if 'game_btn' not in st.session_state:
     st.session_state.game_btn = False
 
 
-
-
-st.header('Is it a waffle or a hacker?')
-st.subheader(f'Waffle Score: {st.session_state.score}')
-st.subheader('Total: 0')
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-col1, col2 = st.columns(2)
+st.write('# Is it a waffle or a hacker?')
 
 user_guess = ""
 player_choices = []
-# score = 0
+
 
 
 def check_score(guess, computer):
