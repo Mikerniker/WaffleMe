@@ -53,7 +53,6 @@ def show_image():
     display_img = random.choice(all_images)
     image_path = display_img[1]
     image_choice = display_img[0]
-    # quiz_image = Image.open(image_path)
     return image_choice, image_path
 
 # def countdown(time_sec):
