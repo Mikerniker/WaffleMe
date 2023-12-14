@@ -38,27 +38,24 @@ hacker_image = Image.open(hacker_image())
 game_placeholder = None
 
 
-display = show_image()
+if st.session_state.game_state == 'playing':
+    # button_counter = 0
+    play_game = True
+    if play_game:
+        game_placeholder = st.empty()
 
-with col1:
-    if st.button('Waffle'):
-        # display_img = random.choice(all_images)
+    # Replace the placeholder with some text:
+        with game_placeholder.container():
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button('Waffle', key=f'waffle_button_{button_counter}'):
+                    user_guess = "waffle"
+                    player_choices.append("waffle")
 
-        user_guess = "waffle"
-        # st.write('You chose Waffle')
-        player_choices.append("waffle")
-        st.write(f'You chose {user_guess}')
-        # if check_score(user_guess, display[0]):
-        #     st.session_state.score += 1
-
-with col2:
-    if st.button('Hacker'):
-        user_guess = "hacker"
-        # st.write('You chose Hacker')
-        player_choices.append("hacker")
-        st.write(f'You chose {user_guess}')
-        # if check_score(user_guess, display[0]):
-        #     st.session_state.score += 1
+            with col2:
+                if st.button('Hacker', key=f'hacker_button_{button_counter}'):
+                    user_guess = "hacker"
+                    player_choices.append("hacker")
 
 
 if check_score(user_guess, display[0]):
