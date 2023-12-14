@@ -28,10 +28,14 @@ if 'game_btn' not in st.session_state:
     st.session_state.game_btn = False
 
 
-st.write('# Is it a waffle or a hacker?')
+st.write('# Choose a button, quickly!')
 
 user_guess = ""
 player_choices = []
+display = show_image()
+button_counter = 0
+hacker_image = Image.open(hacker_image())
+game_placeholder = None
 
 
 def start_game_btn():
