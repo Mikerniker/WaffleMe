@@ -2,6 +2,9 @@ import streamlit as st
 from PIL import Image
 import random
 import time
+from functions import local_css, remote_css, start_game_btn, check_score, \
+    show_image, countdown, hacker_image
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(
     page_title="WaffleMe",
@@ -10,14 +13,6 @@ st.set_page_config(
 )
 
 # ADD CSS
-
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-def remote_css(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
-
 local_css("style.css")
 remote_css('https://fonts.googleapis.com/css2?family=Afacad:wght@700&display=swap')
 

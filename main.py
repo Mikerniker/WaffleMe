@@ -29,10 +29,14 @@ st.image(banner_image, width=900)
 #     falling_speed=5,
 #     animation_length="infinite",
 # )
-st.write('# Is it a waffle or a hacker?')
-st.write('## Make your best guess at whats behind the question'
-         ' mark. Choose a button before the time runs out '
-         'or a hacker will steal your waffles! ')
+# st.write('# Is it a waffle or a hacker?')
+st.write('## Take your best guess at whats behind the question mark '
+         'and select a button before the time runs out, '
+         'or risk losing your delicious waffles to a mischievous hacker!')
+
+# st.write('## Make your best guess at whats behind the question'
+#          ' mark. Choose a button before the time runs out '
+#          'or a hacker will steal your waffles! ')
 
 if st.button('Start Game'):
     st.session_state.game_state = 'playing'
