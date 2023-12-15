@@ -57,6 +57,16 @@ if st.session_state.game_state == 'playing':
                     user_guess = "hacker"
                     player_choices.append("hacker")
 
+            waffle_score = st.empty()
+            user_choice = st.empty()
+            user_choice.write(f'### You chose {user_guess}')
+            total_guesses = st.empty()
+            final_message = st.empty()
+            countdown_placeholder = st.empty()
+            image_placeholder = st.empty()
+            quiz_image = Image.open('images/questionmark.png')
+            image_placeholder.image(quiz_image, width=600)
+
 
 if check_score(user_guess, display[0]):
     st.session_state.score += 1
