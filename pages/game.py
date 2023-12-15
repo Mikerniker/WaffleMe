@@ -67,6 +67,13 @@ if st.session_state.game_state == 'playing':
             quiz_image = Image.open('images/questionmark.png')
             image_placeholder.image(quiz_image, width=600)
 
+            countdown_on = True
+            if countdown_on:
+                for i in range(10, -1, -1):
+                    countdown(i, countdown_placeholder)
+                    time.sleep(0.5)
+                countdown_on = False
+
 
 if check_score(user_guess, display[0]):
     st.session_state.score += 1
