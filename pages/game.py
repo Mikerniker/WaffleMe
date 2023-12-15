@@ -74,7 +74,11 @@ if st.session_state.game_state == 'playing':
                     time.sleep(0.5)
                 countdown_on = False
 
+            # Update the image placeholder with the final image
+            final_image = Image.open(display[1])
+            image_placeholder.image(final_image, width=600)
 
+# REVIEW
 if check_score(user_guess, display[0]):
     st.session_state.score += 1
     message = "You got it!"
