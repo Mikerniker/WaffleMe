@@ -89,9 +89,9 @@ if st.session_state.game_state == 'playing':
                 st.session_state.game_state = 'end'
                 play_game = False
 
-# REVIEW
-else:
-    message = "Try again!"
+            # REVIEW
+            else:
+                message = "Try again!"
 
         # if check_score(display[0], player_choices):
         #     score += 1
