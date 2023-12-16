@@ -78,11 +78,18 @@ if st.session_state.game_state == 'playing':
             final_image = Image.open(display[1])
             image_placeholder.image(final_image, width=600)
 
+            if user_guess == "":
+                # User did not choose any button
+                user_choice.write(f'### No choice was made.')
+                message = "Shenanihacks can't happen when " \
+                          "choices aren't made..." \
+                          "your waffles have been stolen!"
+                time.sleep(3)
+                image_placeholder.image(hacker_image, width=600)
+                st.session_state.game_state = 'end'
+                play_game = False
+
 # REVIEW
-if check_score(user_guess, display[0]):
-    st.session_state.score += 1
-    message = "You got it!"
-    st.write()
 else:
     message = "Try again!"
 
