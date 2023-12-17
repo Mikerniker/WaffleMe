@@ -89,10 +89,20 @@ if st.session_state.game_state == 'playing':
                 st.session_state.game_state = 'end'
                 play_game = False
 
-            # REVIEW
-            else:
-                message = "Try again!"
 
+            else:
+                if check_score(user_guess, display[0]):
+                    st.session_state.score += 1
+                    message = "You're right, you get waffle points!!"
+                else:
+                    message = "Wrong choice...you've been shenanihacked and " \
+                              "your waffles have been stolen!"
+                    time.sleep(3)
+                    image_placeholder.image(hacker_image, width=600)
+                    st.session_state.game_state = 'end'
+                    play_game = False
+
+            # REVIEW
         # if check_score(display[0], player_choices):
         #     score += 1
 
