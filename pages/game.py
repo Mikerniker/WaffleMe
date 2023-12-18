@@ -42,7 +42,7 @@ if st.session_state.game_state == 'playing':
     # button_counter = 0
     play_game = True
     if play_game:
-        game_placeholder = st.empty()
+        # game_placeholder = st.empty()
 
     # Replace the placeholder with some text:
         with game_placeholder.container():
