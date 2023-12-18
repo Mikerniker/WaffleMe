@@ -102,6 +102,11 @@ if st.session_state.game_state == 'playing':
                     st.session_state.game_state = 'end'
                     play_game = False
 
+            waffle_score.write(f"## Waffle Score 🧇: {st.session_state.score}")
+            final_message.write(f"### {message}")
+            total_guesses.write(f'Total Tries: {len(player_choices)}')
+            user_guess = ""
+
             # REVIEW
         # if check_score(display[0], player_choices):
         #     score += 1
