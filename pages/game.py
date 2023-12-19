@@ -107,6 +107,13 @@ if st.session_state.game_state == 'playing':
             total_guesses.write(f'Total Tries: {len(player_choices)}')
             user_guess = ""
 
+            if st.session_state.game_state == 'playing':
+                button_counter += 1
+            else:
+                time.sleep(4)
+                break
+
+
             # REVIEW
         # if check_score(display[0], player_choices):
         #     score += 1
