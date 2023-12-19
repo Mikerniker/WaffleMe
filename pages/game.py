@@ -38,7 +38,7 @@ hacker_image = Image.open(hacker_image())
 game_placeholder = None
 
 
-if st.session_state.game_state == 'playing':
+while st.session_state.game_state == 'playing':
     # button_counter = 0
     play_game = True
     if play_game:
