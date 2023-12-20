@@ -113,36 +113,12 @@ while st.session_state.game_state == 'playing':
                 time.sleep(4)
                 break
 
-
+if st.session_state.game_state == 'end':
+    # Reset the game state and user guess for the next round
+    st.session_state.game_state = 'start'
+    st.session_state.score = 0
+    user_guess = ""
             # REVIEW
-        # if check_score(display[0], player_choices):
-        #     score += 1
-
-countdown_placeholder = st.empty()
-
-countdown_on = True
-if countdown_on:
-    quiz_image = Image.open('images/questionmark.png')
-    st.image(quiz_image, width=600)
-    for i in range(10, -1, -1):
-        time_str = countdown(i)
-        countdown_placeholder.write(f"Time remaining: {time_str}")
-        time.sleep(1)
-    countdown_on = False
-
-st.write(f"{message}")
-st.write("Guess again to continue playing")
-
-# game_on = True
-
-# if game_on:
-quiz_image = Image.open(display[1])
-st.image(quiz_image, width=600)
-# else:
-#     quiz_image = Image.open('images/questionmark.png')
-#     st.image(quiz_image, width=600)
-st.write(f"Score is: {st.session_state.score} ")
-# player_choices = []
 
 
 
