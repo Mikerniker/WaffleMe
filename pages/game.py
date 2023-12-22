@@ -120,6 +120,8 @@ if st.session_state.game_state == 'end':
     user_guess = ""
             # REVIEW
 
+if st.button('Restart'):
+    st.write("Restart button clicked!")
 
 
 # ORIGINAL
