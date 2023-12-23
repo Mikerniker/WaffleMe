@@ -122,6 +122,8 @@ if st.session_state.game_state == 'end':
 
 if st.button('Restart'):
     st.write("Restart button clicked!")
+    game_placeholder.empty()
+    switch_page("main")
 
 
 # ORIGINAL
