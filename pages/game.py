@@ -35,7 +35,7 @@ player_choices = []
 display = show_image()
 button_counter = 0
 hacker_image = Image.open(hacker_image())
-game_placeholder = None
+game_placeholder = st.empty()
 
 
 while st.session_state.game_state == 'playing':

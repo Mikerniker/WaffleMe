@@ -40,7 +40,7 @@ st.write('## Take your best guess at whats behind the question mark '
 
 if st.button('Start Game'):
     st.session_state.game_state = 'playing'
-    switch_page("test")
+    switch_page("game")
 # if st.button('Start Game'):
 #     switch_page("start_game")
 
