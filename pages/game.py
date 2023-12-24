@@ -24,13 +24,15 @@ if 'score' not in st.session_state:
 if 'game_state' not in st.session_state:
     st.session_state.game_state = 'start'  # Initial game state
 
-if 'game_btn' not in st.session_state:
-    st.session_state.game_btn = False
-
+if 'user_guess' not in st.session_state:
+    st.session_state.user_guess = ''  # Initial game state
+# if 'countdown_placeholder' not in st.session_state:
+#     st.session_state.countdown_placeholder = st.empty()
 
 st.write('# Choose a button, quickly!')
+countdown_placeholder = st.empty()
 
-user_guess = ""
+# user_guess = ""
 player_choices = []
 display = show_image()
 button_counter = 0
@@ -44,25 +46,29 @@ while st.session_state.game_state == 'playing':
     if play_game:
         # game_placeholder = st.empty()
 
-    # Replace the placeholder with some text:
+
+        # Replace the placeholder with some text:
         with game_placeholder.container():
             col1, col2 = st.columns(2)
             with col1:
                 if st.button('Waffle', key=f'waffle_button_{button_counter}'):
-                    user_guess = "waffle"
+                    # user_guess = "waffle"
+                    st.session_state.user_guess = "waffle"
                     player_choices.append("waffle")
 
             with col2:
                 if st.button('Hacker', key=f'hacker_button_{button_counter}'):
-                    user_guess = "hacker"
+                    # user_guess = "hacker"
+                    st.session_state.user_guess = "hacker"
                     player_choices.append("hacker")
 
             waffle_score = st.empty()
             user_choice = st.empty()
-            user_choice.write(f'### You chose {user_guess}')
+            # user_choice.write(f'### You chose {user_guess}')
+            user_choice.write(f'### You chose {st.session_state.user_guess}')
             total_guesses = st.empty()
             final_message = st.empty()
-            countdown_placeholder = st.empty()
+            # countdown_placeholder = st.empty()
             image_placeholder = st.empty()
             quiz_image = Image.open('images/questionmark.png')
             image_placeholder.image(quiz_image, width=600)
@@ -78,7 +84,8 @@ while st.session_state.game_state == 'playing':
             final_image = Image.open(display[1])
             image_placeholder.image(final_image, width=600)
 
-            if user_guess == "":
+            if st.session_state.user_guess == "":
+            # if user_guess == "":
                 # User did not choose any button
                 user_choice.write(f'### No choice was made.')
                 message = "Shenanihacks can't happen when " \
@@ -90,7 +97,8 @@ while st.session_state.game_state == 'playing':
                 play_game = False
 
             else:
-                if check_score(user_guess, display[0]):
+                # if check_score(user_guess, display[0]):
+                if check_score(st.session_state.user_guess, display[0]):
                     st.session_state.score += 1
                     message = "You're right, you get waffle points!!"
                     time.sleep(4)
@@ -105,7 +113,7 @@ while st.session_state.game_state == 'playing':
             waffle_score.write(f"## Waffle Score 🧇: {st.session_state.score}")
             final_message.write(f"### {message}")
             total_guesses.write(f'Total Tries: {len(player_choices)}')
-            user_guess = ""
+            st.session_state.user_guess = ""
 
             if st.session_state.game_state == 'playing':
                 button_counter += 1
@@ -117,7 +125,8 @@ if st.session_state.game_state == 'end':
     # Reset the game state and user guess for the next round
     st.session_state.game_state = 'start'
     st.session_state.score = 0
-    user_guess = ""
+    st.session_state.user_guess = ""
+    # user_guess = ""
             # REVIEW
 
 if st.button('Restart'):
