@@ -30,6 +30,9 @@ if 'user_guess' not in st.session_state:
 #     st.session_state.countdown_placeholder = st.empty()
 
 st.write('# Choose a button, quickly!')
+waffle_score = st.empty()
+total_guesses = st.empty()
+final_message = st.empty()
 countdown_placeholder = st.empty()
 
 # user_guess = ""
@@ -62,12 +65,12 @@ while st.session_state.game_state == 'playing':
                     st.session_state.user_guess = "hacker"
                     player_choices.append("hacker")
 
-            waffle_score = st.empty()
+            # waffle_score = st.empty()
             user_choice = st.empty()
             # user_choice.write(f'### You chose {user_guess}')
             user_choice.write(f'### You chose {st.session_state.user_guess}')
-            total_guesses = st.empty()
-            final_message = st.empty()
+            # total_guesses = st.empty()
+            # final_message = st.empty()
             # countdown_placeholder = st.empty()
             image_placeholder = st.empty()
             quiz_image = Image.open('images/questionmark.png')
