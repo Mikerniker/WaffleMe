@@ -89,11 +89,11 @@ while st.session_state.game_state == 'playing':
                 st.session_state.game_state = 'end'
                 play_game = False
 
-
             else:
                 if check_score(user_guess, display[0]):
                     st.session_state.score += 1
                     message = "You're right, you get waffle points!!"
+                    time.sleep(4)
                 else:
                     message = "Wrong choice...you've been shenanihacked and " \
                               "your waffles have been stolen!"
