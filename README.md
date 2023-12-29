@@ -1,7 +1,7 @@
 # Waffle Me
 
 
-A personal practice hack for (shenanihack](https://wafflehackstesting.devpost.com/) 
+A personal practice hack for [shenanihack](https://wafflehackstesting.devpost.com/) 
 
 ## Overview
 
