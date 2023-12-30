@@ -20,6 +20,9 @@ remote_css('https://fonts.googleapis.com/css2?family=Afacad:wght@700&display=swa
 if 'score' not in st.session_state:
     st.session_state.score = 0
 
+if 'attempts' not in st.session_state:
+    st.session_state.attempts = 0
+
 if 'game_state' not in st.session_state:
     st.session_state.game_state = 'start'  # Initial game state
 
@@ -98,9 +101,11 @@ while st.session_state.game_state == 'playing':
 
                     play_game = False
 
+            st.session_state.attempts += 1
+
             waffle_score.write(f"## Waffle Score 🧇: {st.session_state.score}")
             final_message.write(f"### {message}")
-            total_guesses.write(f'Total Tries: {len(player_choices)}')
+            total_guesses.write(f'Total Tries: {st.session_state.attempts}')
             st.session_state.user_guess = ""
 
             if st.session_state.game_state == 'playing':
@@ -113,6 +118,7 @@ if st.session_state.game_state == 'end':
     # Reset the game state and user guess for the next round
     st.session_state.game_state = 'start'
     st.session_state.score = 0
+    st.session_state.attempts = 0
     st.session_state.user_guess = ""
 
 
