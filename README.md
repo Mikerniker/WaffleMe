@@ -1,4 +1,4 @@
-# Waffle Me
+# Waffled
 
 - [Demo Site](https://waffled.streamlit.app/)
 - The other repo used for deploying to streamlit is here:[WaffleHack2](https://github.com/Mikerniker/WaffleHack2)
