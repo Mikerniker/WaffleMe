@@ -17,7 +17,6 @@ Players earn points if they correctly guess what is behind the question mark.
 Make sure you have Python and Streamlit installed on your system.
 
 ```
-bash
 pip install streamlit
 ```
 
