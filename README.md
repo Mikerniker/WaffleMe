@@ -6,7 +6,7 @@
 hackathon.
 
 ## Overview
-WaffleMe is a simple interactive game built with Streamlit, where players need to make a quick 
+Waffled is a simple interactive game built with Streamlit, where players need to make a quick 
 choice between 'Waffle' and 'Hacker' buttons before the countdown ends. 
 Players earn points if they correctly guess what is behind the question mark.
 
