@@ -1,8 +1,7 @@
 import streamlit as st
 from PIL import Image
-import random
 import time
-from functions import local_css, remote_css, start_game_btn, check_score, \
+from functions import local_css, remote_css, check_score, \
     show_image, countdown, hacker_image
 from streamlit_extras.switch_page_button import switch_page
 
@@ -25,9 +24,7 @@ if 'game_state' not in st.session_state:
     st.session_state.game_state = 'start'  # Initial game state
 
 if 'user_guess' not in st.session_state:
-    st.session_state.user_guess = ''  # Initial game state
-# if 'countdown_placeholder' not in st.session_state:
-#     st.session_state.countdown_placeholder = st.empty()
+    st.session_state.user_guess = ''
 
 st.write('# Choose a button, quickly!')
 waffle_score = st.empty()
@@ -35,7 +32,6 @@ total_guesses = st.empty()
 final_message = st.empty()
 countdown_placeholder = st.empty()
 
-# user_guess = ""
 player_choices = []
 display = show_image()
 button_counter = 0
@@ -44,34 +40,24 @@ game_placeholder = st.empty()
 
 
 while st.session_state.game_state == 'playing':
-    # button_counter = 0
     play_game = True
     if play_game:
-        # game_placeholder = st.empty()
-
-
         # Replace the placeholder with some text:
         with game_placeholder.container():
             col1, col2 = st.columns(2)
             with col1:
                 if st.button('Waffle', key=f'waffle_button_{button_counter}'):
-                    # user_guess = "waffle"
                     st.session_state.user_guess = "waffle"
                     player_choices.append("waffle")
 
             with col2:
                 if st.button('Hacker', key=f'hacker_button_{button_counter}'):
-                    # user_guess = "hacker"
                     st.session_state.user_guess = "hacker"
                     player_choices.append("hacker")
 
-            # waffle_score = st.empty()
+
             user_choice = st.empty()
-            # user_choice.write(f'### You chose {user_guess}')
             user_choice.write(f'### You chose {st.session_state.user_guess}')
-            # total_guesses = st.empty()
-            # final_message = st.empty()
-            # countdown_placeholder = st.empty()
             image_placeholder = st.empty()
             quiz_image = Image.open('images/questionmark.png')
             image_placeholder.image(quiz_image, width=600)
@@ -128,42 +114,9 @@ if st.session_state.game_state == 'end':
     st.session_state.game_state = 'start'
     st.session_state.score = 0
     st.session_state.user_guess = ""
-    # user_guess = ""
-            # REVIEW
+
 
 if st.button('Restart'):
     st.write("Restart button clicked!")
     game_placeholder.empty()
     switch_page("main")
-
-
-# ORIGINAL
-
-# img, pth = show_image()
-# quiz_image = Image.open(pth)
-# st.image(quiz_image, width=600)
-# display.append(img)
-# print(display)
-#
-# #player_choices = []
-# score = 0
-
-# check_score(display, player_choices)
-
-
-
-# # Create a session state variable
-# if 'test' not in st.session_state:
-#     st.session_state.test = 5
-#
-# if st.button('Click me'):
-#     st.write(f"Test is: {st.session_state.test}")
-#     st.session_state.test -= 1
-# test = 5
-# if st.button('Click me'):
-#     st.write(f"Test is: {test} ")
-#     test -= 0
-
-
-# quiz_image = Image.open('images/questionmark.png')
-# st.image(quiz_image, width=600)
