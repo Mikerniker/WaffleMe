@@ -1,5 +1,10 @@
 # Waffle Me
 
+- [Demo Site](https://waffled.streamlit.app/)
+- The other repo used for deploying to streamlit is here:[WaffleHack2](https://github.com/Mikerniker/WaffleHack2)
+- This is a practice hack for the [Shenanihack](https://wafflehackstesting.devpost.com/) 
+hackathon.
+
 ## Overview
 WaffleMe is a simple interactive game built with Streamlit, where players need to make a quick 
 choice between 'Waffle' and 'Hacker' buttons before the countdown ends. 
@@ -15,9 +20,6 @@ Make sure you have Python and Streamlit installed on your system.
 bash
 pip install streamlit
 ```
-
-This is a personal practice hack for the [Shenanihack](https://wafflehackstesting.devpost.com/) 
-hackathon.
 
 ## Installation
 
