@@ -47,6 +47,15 @@ Visit the provided URL in your browser to play.
 - Choose between 'Waffle' and 'Hacker' buttons.
 - Earn waffles based on correct choices.
 
+## Future Improvements
+
+- Fix glitches and improve user experience.
+- Organize and fix code to make it cleaner.
+
+- Feel free to clone the repository, explore the code!
+
+Thank you for visiting!
+
 ## References
 
 - [Session State Reference](https://stackoverflow.com/questions/77588263/how-to-make-session-state-persist-after-button-click-in-streamlit/77588562#77588562)
