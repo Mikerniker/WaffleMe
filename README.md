@@ -1,7 +1,22 @@
 # Waffle Me
 
+WaffleMe is a simple interactive game built with Streamlit, where players need to make a quick 
+choice between 'Waffle' and 'Hacker' buttons before the countdown ends. 
+Players earn points if they correctly guess what is behind the question mark.
 
-A personal practice hack for [shenanihack](https://wafflehackstesting.devpost.com/) 
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Python and Streamlit installed on your system.
+
+```
+bash
+pip install streamlit
+```
+
+This is a personal practice hack for the [Shenanihack](https://wafflehackstesting.devpost.com/) 
+hackathon.
 
 ## Overview
 
