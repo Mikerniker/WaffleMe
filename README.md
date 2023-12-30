@@ -41,8 +41,12 @@ streamlit run app.py
 
 Visit the provided URL in your browser to play.
 
+## Game Features
+
+- Choose between 'Waffle' and 'Hacker' buttons.
+- Earn waffles based on correct choices.
 
 ## References
 
-[Reference 1](https://stackoverflow.com/questions/77588263/how-to-make-session-state-persist-after-button-click-in-streamlit/77588562#77588562)
-[Reference 2](https://github.com/ccrsxx/pywebapp/blob/main/src/guess_number.py)
+- [Session State Reference](https://stackoverflow.com/questions/77588263/how-to-make-session-state-persist-after-button-click-in-streamlit/77588562#77588562)
+- Game is somewhat based on the [Higher Lower game](https://github.com/ccrsxx/pywebapp/blob/main/src/guess_number.py)
