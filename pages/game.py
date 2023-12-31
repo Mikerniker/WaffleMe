@@ -4,7 +4,7 @@ import time
 from functions import local_css, remote_css, check_score, \
     show_image, countdown, hacker_image
 from streamlit_extras.switch_page_button import switch_page
-from streamlit_modal import Modal
+
 
 
 st.set_page_config(
@@ -31,12 +31,11 @@ if 'game_state' not in st.session_state:
 if 'user_guess' not in st.session_state:
     st.session_state.user_guess = ''
 
-instructions = st.empty() #added
-
+instructions = st.empty()
 waffle_score = st.empty()
 total_guesses = st.empty()
-final_message = st.empty()
 countdown_placeholder = st.empty()
+final_message = st.empty()
 game_placeholder = st.empty()
 
 player_choices = []
@@ -64,9 +63,10 @@ def waffle_game():
                         st.session_state.user_guess = "hacker"
                         player_choices.append("hacker")
 
-
-                user_choice = st.empty()
-                user_choice.write(f'### You chose {st.session_state.user_guess}')
+                for col in st.columns(1):
+                    with col:
+                        user_choice = st.empty()
+                        user_choice.write(f'## You chose {st.session_state.user_guess}')
                 image_placeholder = st.empty()
                 quiz_image = Image.open('images/questionmark.png')
                 image_placeholder.image(quiz_image, width=600)
@@ -132,56 +132,9 @@ if st.session_state.game_state == 'end':
 
     # game_placeholder.empty()
     game_placeholder.markdown("")
-
     time.sleep(2)
-    instructions.write('## Game Over!')
 
 for col in st.columns(1):
     with col:
         if st.button('Restart'):
             switch_page("main")
-
-
-
-
-
-# if st.button('Restart'):
-#     st.write("Restart button clicked!")
-#     game_placeholder.empty()
-#     switch_page("main")
-
-#     modal.open()
-#
-# if modal.is_open():
-#     # Use st.container() to create a container
-#     with st.container():
-#         # Add custom CSS to center the modal
-#         st.markdown("""
-#             <style>
-#                 .stContainer > div {
-#                     display: flex;
-#                     justify-content: center;
-#                     align-items: center;
-#                     height: 100vh;  /* Set the container height to the full viewport height */
-#                 }
-#             </style>
-#         """, unsafe_allow_html=True)
-#
-#         # Use a container to center the modal content
-#         with modal.container():
-#             if st.button('Restart'):
-#                 st.write("Restart button clicked!")
-#                 game_placeholder.empty()
-#                 switch_page("main")
-
-# if modal.is_open():
-#     with modal.container():
-#         if st.button('Restart'):
-#             st.write("Restart button clicked!")
-#             game_placeholder.empty()
-#             switch_page("main")
-
-# if st.button('Restart'):
-#     st.write("Restart button clicked!")
-#     game_placeholder.empty()
-#     switch_page("main")
