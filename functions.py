@@ -30,7 +30,7 @@ def countdown(time_sec, countdown_placeholder):
     if time_sec >= 0:
         mins, secs = divmod(time_sec, 60)
         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        countdown_placeholder.write(f"#### Time remaining: {timeformat}")
+        countdown_placeholder.write(f"### Time Remaining: {timeformat}")
         # time.sleep(1)
 
 
