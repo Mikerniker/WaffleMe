@@ -112,7 +112,7 @@ def waffle_game():
 
                 waffle_score.write(f"### Waffle Score 🧇: {st.session_state.score}")
                 final_message.write(f"### {message}")
-                total_guesses.write(f'Total Tries: {st.session_state.attempts}')
+                total_guesses.write(f'### Total Tries: {st.session_state.attempts}')
                 st.session_state.user_guess = ""
 
                 if st.session_state.game_state == 'playing':
