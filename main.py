@@ -20,14 +20,15 @@ banner_image = Image.open('images/waffle2.png')
 
 st.image(banner_image, width=900)
 
-st.write('## Take your best guess at whats behind the question mark '
+st.write('#### Take your best guess at whats behind the question mark '
          'and select a button before the time runs out, '
          'or risk losing your delicious waffles to a mischievous hacker!')
 
-
-if st.button('Start'):
-    st.session_state.game_state = 'playing'
-    switch_page("game")
+for col in st.columns(1):
+    with col:
+        if st.button('Start'):
+            st.session_state.game_state = 'playing'
+            switch_page("game")
 
 
 # st.markdown("<br><br>", unsafe_allow_html=True)
