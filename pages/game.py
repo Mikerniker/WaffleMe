@@ -90,6 +90,7 @@ def waffle_game():
                     time.sleep(3)
                     image_placeholder.image(hacker_image, width=600)
                     st.session_state.game_state = 'end'
+                    instructions.write('## Game Over!')
                     play_game = False
 
                 else:
@@ -98,9 +99,9 @@ def waffle_game():
                         message = "You're right, you get waffle points!!"
                         time.sleep(4)
                     else:
-
                         message = "Wrong choice...you've been shenanihacked and " \
                                   "your waffles have been stolen!"
+                        instructions.write('## Game Over!')
                         time.sleep(3)
                         image_placeholder.image(hacker_image, width=600)
                         st.session_state.game_state = 'end'
@@ -120,7 +121,6 @@ def waffle_game():
                     time.sleep(4)
                     break
 
-# modal = Modal("Game Over", key="modal_key")
 waffle_game()
 
 if st.session_state.game_state == 'end':
@@ -135,8 +135,7 @@ if st.session_state.game_state == 'end':
 
     time.sleep(2)
     instructions.write('## Game Over!')
-    # with game_placeholder.container():
-    #     st.write("Test")
+
 for col in st.columns(1):
     with col:
         if st.button('Restart'):
